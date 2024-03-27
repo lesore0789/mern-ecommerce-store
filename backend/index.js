@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
+const { log } = require("console");
 
 const app = express();
 
@@ -202,6 +203,22 @@ app.post("/login", async (req, res) => {
   } else {
     res.json({ success: false, errors: "Wrong Email" });
   }
+});
+
+// Endpoint for newcollection data
+app.get("/newcollections", async (req, res) => {
+  let products = await Product.find({});
+  let newCollection = products.slice(1).slice(-8);
+  console.log("NewCollection Fetched");
+  res.send(newCollection);
+});
+
+// Endpoint for popular in women section
+app.get("/popularinwomen", async (req, res) => {
+  let products = await Product.find({ category: "women" });
+  let popularInWomen = products.slice(0, 4);
+  console.log("Popular in women fetched");
+  res.send(popularInWomen);
 });
 
 app.listen(port, (error) => {
