@@ -17,7 +17,7 @@ export const LoginSignUp = () => {
   const login = async () => {
     console.log('Login function executed');
     let responseData;
-    await fetch('http://localhost:4000/login',{
+    await fetch('https://mern-ecommerce-store-tvv0.onrender.com/login',{
       method:'POST',
       headers: {
         Accept:'application/form-data',
@@ -35,7 +35,7 @@ export const LoginSignUp = () => {
   const signup = async () => {
     console.log('sign up function executed');
     let responseData;
-    await fetch('http://localhost:4000/signup',{
+    await fetch('https://mern-ecommerce-store-tvv0.onrender.com/signup',{
       method:'POST',
       headers: {
         Accept:'application/form-data',

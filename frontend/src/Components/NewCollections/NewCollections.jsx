@@ -7,7 +7,7 @@ export const NewCollections = () => {
   const [newCollection, setNewCollection] =useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:4000/newcollections').then((res)=>res.json()).then((data)=>setNewCollection(data))
+    fetch('https://mern-ecommerce-store-tvv0.onrender.com/newcollections').then((res)=>res.json()).then((data)=>setNewCollection(data))
   },[])
 
   return (

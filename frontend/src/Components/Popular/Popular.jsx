@@ -7,7 +7,7 @@ export const Popular = () => {
   const [popularProduct, setPopularProducts] = useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:4000/popularinwomen').then((res)=>res.json()).then((data)=>setPopularProducts(data))
+    fetch('https://mern-ecommerce-store-tvv0.onrender.com/popularinwomen').then((res)=>res.json()).then((data)=>setPopularProducts(data))
   },[])
 
   return (
